@@ -1,0 +1,17 @@
+<h1><%= "Edit #{@student.to_s}" %></h1>
+<br>
+<%= form_tag student_path, method: "patch" do %>
+
+  <label class="switch">
+    <% if @student.active %>
+    <input type="checkbox" name="status_toggle" value="active" checked>
+    <% else %>
+    <input type="checkbox" name="status_toggle" value="active">
+    <% end %>
+    <div class="slider round"></div>
+  </label>
+  <br><br>
+  <%= submit_tag "Update" %>
+<% end %>
+<br>
+<%= link_to "Homepage", students_path %>
